@@ -280,3 +280,30 @@ body.light {
     font-size: 15px;
   }
 }
+
+/* ===== SEARCH MOBILE FORCE FIX ===== */
+@media (max-width: 768px) {
+
+  .identity-header {
+    width: 100%;
+    padding: 0 12px;
+    box-sizing: border-box;
+  }
+
+  .search-wrapper {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .search-wrapper input {
+    width: 100%;
+    max-width: 100%;
+    padding: 14px 16px 14px 44px;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+
+}
