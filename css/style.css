@@ -173,7 +173,7 @@ body.light {
 
 .search-wrapper input {
   width: 100%;
-  padding: 16px 18px 16px 48px;
+  padding: 16px 18px;
   border-radius: 999px;
   border: 1px solid var(--border);
   background: var(--glass);
@@ -182,16 +182,6 @@ body.light {
   font-size: 15px;
   outline: none;
   transition: 0.3s ease;
-}
-
-/* icon */
-.search-icon {
-  position: absolute;
-  top: 50%;
-  left: 18px;
-  transform: translateY(-50%);
-  font-size: 16px;
-  opacity: 0.7;
 }
 
 /* hover & focus */
