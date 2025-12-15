@@ -211,3 +211,72 @@ body.light {
   margin: 60px auto 40px;
   text-align: center;
 }
+
+/* ===== MOBILE NAVBAR FIX ===== */
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 16px;
+    gap: 10px;
+  }
+
+  .logo {
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .theme-toggle {
+    padding: 6px 8px;
+    font-size: 14px;
+  }
+}
+
+/* ===== MOBILE SEARCH FIX ===== */
+@media (max-width: 768px) {
+
+  .search-wrapper {
+    width: 92%;
+    max-width: 92vw;
+  }
+
+  .search-wrapper input {
+    font-size: 14px;
+    padding: 14px 16px 14px 44px;
+  }
+
+  .search-icon {
+    left: 14px;
+    font-size: 14px;
+  }
+}
+
+/* ===== MOBILE CARD FIX ===== */
+@media (max-width: 768px) {
+
+  .grid {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .student, .card {
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .student p {
+    font-size: 15px;
+  }
+}
