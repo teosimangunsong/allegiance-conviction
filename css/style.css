@@ -1,0 +1,213 @@
+:root {
+  --bg-dark: #0a0b1f;
+  --glass: rgba(255,255,255,0.08);
+  --border: rgba(255,255,255,0.18);
+  --accent1: #1e90ff;
+  --accent2: #7a5cff;
+  --text: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top, #141833, var(--bg-dark));
+}
+
+/* INTRO */
+#intro {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(120deg, var(--accent1), var(--accent2));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: introFade 2s forwards;
+}
+
+@keyframes introFade {
+  0%,80% { opacity:1; }
+  100% { opacity:0; visibility:hidden; }
+}
+
+/* NAVBAR */
+.navbar {
+  display:flex;
+  justify-content:space-between;
+  padding:14px 28px;
+  backdrop-filter: blur(14px);
+  background: linear-gradient(120deg, rgba(30,144,255,.35), rgba(122,92,255,.25));
+}
+
+.nav-links a {
+  color:white;
+  text-decoration:none;
+  margin-left:16px;
+}
+
+/* HERO */
+.hero {
+  min-height:70vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.hero h1 {
+  font-size: clamp(32px,6vw,56px);
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.slogan {
+  letter-spacing:2px;
+  text-shadow:
+    0 0 6px rgba(30,144,255,.6),
+    0 0 14px rgba(122,92,255,.5);
+  animation: neonPulse 2.5s infinite;
+}
+
+@keyframes neonPulse {
+  50% {
+    text-shadow:
+      0 0 10px rgba(30,144,255,.9),
+      0 0 22px rgba(122,92,255,.8);
+  }
+}
+
+/* GRID & CARD */
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:22px;
+  padding:30px;
+}
+
+.card, .student {
+  background: var(--glass);
+  backdrop-filter: blur(16px);
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:22px;
+  transition:.4s;
+}
+
+.card:hover, .student:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow:
+    0 0 12px rgba(30,144,255,.35),
+    0 0 24px rgba(122,92,255,.25);
+}
+
+/* POPUP */
+.popup {
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.85);
+  justify-content:center;
+  align-items:center;
+}
+
+.popup-content {
+  background: linear-gradient(160deg, rgba(30,144,255,.35), rgba(122,92,255,.25));
+  backdrop-filter: blur(20px);
+  border-radius:26px;
+  padding:24px;
+  width:90%;
+  max-width:360px;
+}
+
+/* LIGHT MODE */
+body.light {
+  --bg-dark:#f4f6ff;
+  --glass:rgba(0,0,0,.05);
+  --border:rgba(0,0,0,.12);
+  --text:#0a0b1f;
+  background: radial-gradient(circle at top,#fff,#e8ecff);
+}
+
+/* TOGGLE */
+.theme-toggle {
+  border:none;
+  border-radius:50%;
+  padding:6px 10px;
+  cursor:pointer;
+}
+
+/* ===== IDENTITY HEADER ===== */
+.identity-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  margin: 60px auto 40px;
+  text-align: center;
+}
+
+/* Judul IDENTITY */
+.page-title {
+  font-size: clamp(36px, 6vw, 52px);
+  font-weight: 800;
+  letter-spacing: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--accent1),
+    var(--accent2)
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* ===== SEARCH BAR ===== */
+.search-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+}
+
+.search-wrapper input {
+  width: 100%;
+  padding: 16px 18px 16px 48px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+  color: var(--text);
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+/* icon */
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 18px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+/* hover & focus */
+.search-wrapper input:hover,
+.search-wrapper input:focus {
+  box-shadow:
+    0 0 12px rgba(30, 144, 255, 0.35),
+    0 0 22px rgba(122, 92, 255, 0.25);
+  border-color: rgba(122, 92, 255, 0.6);
+}
+
+/* ===== GALLERY HEADER ===== */
+.gallery-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 60px auto 40px;
+  text-align: center;
+}

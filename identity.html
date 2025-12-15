@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Identity</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">ALLEGIANCE</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="identity.html">Identity</a>
+    <a href="gallery.html">Gallery</a>
+    <button id="themeToggle" class="theme-toggle">🌙</button>
+  </div>
+</nav>
+
+<div class="identity-header" data-aos="fade-up">
+  <h1 class="page-title">IDENTITY</h1>
+
+  <div class="search-wrapper">
+    <span class="search-icon">🔍</span>
+    <input
+      id="search"
+      type="text"
+      placeholder="Cari nama, asal, atau nomor absen"
+    >
+  </div>
+</div>
+
+<div id="studentList" class="grid"></div>
+
+<!-- POPUP -->
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span id="close">&times;</span>
+    <img id="popupImg">
+    <h2 id="popupName"></h2>
+    <p id="popupDetail"></p>
+  </div>
+</div>
+
+<script src="js/students.js"></script>
+<script src="js/identity.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init({ duration: 900, once: true });</script>
+<script src="js/theme.js"></script>
+</body>
+</html>

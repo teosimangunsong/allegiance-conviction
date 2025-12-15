@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery</title>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">ALLEGIANCE</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="identity.html">Identity</a>
+    <a href="gallery.html">Gallery</a>
+    <button id="themeToggle" class="theme-toggle">🌙</button>
+  </div>
+</nav>
+
+<div class="gallery-header">
+  <h1 class="page-title">GALLERY</h1>
+</div>
+
+<div class="grid">
+  <img src="assets/gallery/1.jpg" class="gallery-img">
+  <img src="assets/gallery/2.jpg" class="gallery-img">
+  <img src="assets/gallery/3.jpg" class="gallery-img">
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="popup">
+  <div class="popup-content">
+    <span id="closeLightbox">&times;</span>
+    <img id="lightboxImg">
+    <p id="lightboxCounter"></p>
+  </div>
+</div>
+
+<script src="js/gallery.js"></script>
+<script src="js/theme.js"></script>
+</body>
+</html>
