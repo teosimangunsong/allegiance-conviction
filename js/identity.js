@@ -3,40 +3,76 @@ const popup = document.getElementById("popup");
 const popupImg = document.getElementById("popupImg");
 const popupName = document.getElementById("popupName");
 const popupDetail = document.getElementById("popupDetail");
+const closeBtn = document.getElementById("close");
+const absenBadge = document.querySelector(".absen-badge");
+const searchInput = document.getElementById("search");
 
-function render(data){
-  list.innerHTML="";
-  data.forEach(s=>{
-    const div=document.createElement("div");
-    div.className="student";
-    div.innerHTML=`<img src="${s.foto}"><p>${s.absen}. ${s.nama}</p>`;
-    div.onclick=()=>show(s);
+/* ===== RENDER LIST SISWA ===== */
+function render(data) {
+  list.innerHTML = "";
+
+  data.forEach(s => {
+    const div = document.createElement("div");
+    div.className = "student";
+
+    div.innerHTML = `
+      <div class="student-img">
+        <img src="${s.foto}" alt="${s.nama}">
+      </div>
+      <p class="student-name">${s.nama}</p>
+      <div class="absen-badge card-badge">${s.absen}</div>
+    `;
+
+    div.addEventListener("click", () => showPopup(s));
     list.appendChild(div);
   });
 }
 
-function show(s){
-  popup.style.display="flex";
-  popupImg.src=s.foto;
-  popupName.innerText=s.namaLengkap;
+/* ===== TAMPILKAN POPUP ===== */
+function showPopup(s) {
+  popup.style.display = "flex";
 
-  popupDetail.innerHTML=`
-    Lahir: ${s.lahir}<br>
-    Asal: ${s.asal}<br>
-    Hobi: ${s.hobi}<br>
-    Instagram: ${s.igUser ? "@"+s.igUser : "-"}
+  popupImg.src = s.foto;
+  popupName.textContent = s.namaLengkap;
+
+  popupDetail.innerHTML = `
+    <div>Lahir: ${s.lahir}</div>
+    <div>Asal: ${s.asal}</div>
+    <div>Hobi: ${s.hobi || "-"}</div>
+    <div>Instagram: ${s.igUser ? "@" + s.igUser : "-"}</div>
   `;
+
+  /* badge nomor absen */
+  if (absenBadge) {
+    absenBadge.textContent = s.absen;
+  }
 }
 
-document.getElementById("close").onclick=()=>popup.style.display="none";
+/* ===== TUTUP POPUP ===== */
+closeBtn.addEventListener("click", () => {
+  popup.style.display = "none";
+});
 
-document.getElementById("search").oninput=e=>{
-  const q=e.target.value.toLowerCase();
-  render(students.filter(s =>
-    s.nama.toLowerCase().includes(q) ||
-    s.asal.toLowerCase().includes(q) ||
-    s.absen.toString().includes(q)
-  ));
-};
+/* klik area gelap juga nutup */
+popup.addEventListener("click", e => {
+  if (e.target === popup) {
+    popup.style.display = "none";
+  }
+});
 
+/* ===== SEARCH ===== */
+searchInput.addEventListener("input", e => {
+  const q = e.target.value.toLowerCase();
+
+  render(
+    students.filter(s =>
+      s.nama.toLowerCase().includes(q) ||
+      s.namaLengkap.toLowerCase().includes(q) ||
+      s.asal.toLowerCase().includes(q) ||
+      s.absen.toString().includes(q)
+    )
+  );
+});
+
+/* ===== INIT ===== */
 render(students);

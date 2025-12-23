@@ -1,6 +1,5 @@
-const btn=document.getElementById("themeToggle");
+const toggle = document.getElementById("themeToggle");
 
-btn.onclick=()=>{
+toggle.addEventListener("click", () => {
   document.body.classList.toggle("light");
-  btn.textContent = document.body.classList.contains("light") ? "☀️" : "🌙";
-};
+});

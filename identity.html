@@ -6,19 +6,28 @@
 <title>Identity</title>
 
 <link rel="stylesheet" href="css/style.css">
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <nav class="navbar">
   <div class="logo">ALLEGIANCE</div>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="identity.html">Identity</a>
-    <a href="gallery.html">Gallery</a>
-    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="identity.html" class="active">Identity</a>
+      <a href="gallery.html">Gallery</a>
+    </div>
+
+    <!-- Theme toggle -->
+    <div id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+      <span class="toggle-knob"></span>
+    </div>
   </div>
 </nav>
+
+
 
 <div class="identity-header" data-aos="fade-up">
   <h1 class="page-title">IDENTITY</h1>
@@ -32,7 +41,12 @@
   </div>
 </div>
 
-<div id="studentList" class="grid"></div>
+<section class="identity-section">
+  <div class="grid-wrapper">
+    <div id="studentList" class="grid"></div>
+  </div>
+</section>
+
 
 <!-- POPUP -->
 <div id="popup" class="popup">
@@ -41,6 +55,7 @@
     <img id="popupImg">
     <h2 id="popupName"></h2>
     <p id="popupDetail"></p>
+    <div class="absen-badge"></div>
   </div>
 </div>
 
