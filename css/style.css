@@ -1175,3 +1175,72 @@ section.grid .card p {
     line-height: 1.5;
   }
 }
+
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px 16px;
+  }
+
+  /* baris menu */
+  .nav-right {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  /* pills menu */
+  .nav-links {
+    display: flex;
+    gap: 12px;
+  }
+
+  .nav-links a {
+    padding: 8px 16px;          /* ⬅️ PILL LEBIH LEGA */
+    border-radius: 14px;
+    font-size: 14px;
+  }
+
+  /* toggle tetap SEBARIS */
+  .theme-toggle {
+    margin-left: 6px;
+    width: 42px;
+    height: 22px;
+  }
+
+  .theme-toggle .toggle-knob {
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  body:not(.light) .theme-toggle .toggle-knob {
+    left: 22px;   /* ⬅️ SAMA SEPERTI DESKTOP */
+  }
+}
+
+@media (max-width: 768px) {
+
+  .grid {
+    padding: 20px 14px;        /* ⬅️ JARAK KANAN KIRI */
+    gap: 18px;
+  }
+
+  .card {
+    max-width: 92%;
+    margin: 0 auto;            /* ⬅️ TENGAH */
+    padding: 22px;
+  }
+}
+
+.card {
+  min-height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
